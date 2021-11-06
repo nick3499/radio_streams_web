@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=UTF-8>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="List radio station links."/>
+  <title>Radio Streams Web</title>
+  <style>
+    body { 
+      background-color: #f4f1de;
+      font-family: 'Boogaloo', cursive;
+    }
+    ul { list-style: none; }
+    .c1 { color: #f4f1de; }
+    .c2 { color: #f2cc8f; }
+    .c3 { color: #81b29a; }
+    .c4 { color: #e07a5f; }
+    .c5 { color: #3d405b; }
+    h2 {
+      letter-spacing: 1px;
+    }
+    li {
+      font-size: 1.1vw;
+      letter-spacing: 1px;
+    }
+    li a {
+      display: inline-block;
+      border: 1px solid #f2cc8f;
+      text-decoration: none;
+      padding: 0 .5em;
+      color: #ffffff;
+      background-color: #e07a5f;
+    }
+    li a:hover {
+      background-color: #81b29a;
+      color: #ffffff;
+    }
+    li a:active {
+      background-color: #f2cc8f;
+      color: #000000;
+    }
+  </style>
+</head>
+<body>
+  <h2 class="c5">Radio Streams Web</h2>
+  <ul>
+    {# iterate station list #}
+    {% for station in station_data['stations'] %}
+    <li><span class="c5">{{ '%03d' % loop.index }}</span> <a href="{{ station['url'] }}" target="_blank">{{ station['name'] }}</a> <span class="c3">{{ ' ~ '.join(station['genres']) }}</span> <span class="c2">{{ station['location'] }}</span></li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
