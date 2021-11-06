@@ -1,5 +1,12 @@
 # radio_streams_web
-Serve radio station links; Python 3, CherryPy, Jinja 2, JSON database
+## Serve radio station links
+
+### Included software:
+
+- Python 3
+- CherryPy
+- Jinja 2
+- JSON database
 
 ![screen capture](screen-capture.png)
 
