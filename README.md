@@ -98,3 +98,21 @@ Below are a couple of examples of how each successive 3-digit `loop.index` value
 {{ '%03d' % loop.index }}
 {{ '{:03}'.format(loop.index) }}
 ```
+
+## Find an Available Local Port Number
+
+`portend` module can be use to find a different
+
+```python
+>>> from portend import find_available_local_port
+>>> find_available_local_port()
+53851
+```
+
+Then change the `if` block:
+
+```python
+if __name__ == '__main__':
+    cherrypy.config.update({'server.socket_port': 53851})
+    cherrypy.quickstart(Index())
+```
